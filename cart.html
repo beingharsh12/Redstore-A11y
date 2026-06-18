@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RedStore Cart</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <nav aria-label="Primary navigation">
+        <a class="logo" href="index.html" aria-label="RedStore home">RedStore</a>
+        <ul class="navLinks" id="primary-navigation">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#product-section">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html" aria-current="page">Cart</a></li>
+        </ul>
+        <button
+          class="menu-icon"
+          type="button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </header>
+
+    <main class="content cart-page" id="main-content" aria-labelledby="cart-heading">
+      <h1 id="cart-heading">RedStore Cart</h1>
+      <section class="cart" aria-label="Shopping cart">
+        <div class="cartItems" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <script src="cart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
