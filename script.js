@@ -71,6 +71,6 @@ document.addEventListener("click", (e) => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
   if (e.target.classList.contains("addCart")) {
-    alert("Product added to cart!");
+    // alert(`product added to cart!`);
   }
 });

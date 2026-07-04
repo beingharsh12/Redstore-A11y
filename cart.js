@@ -22,10 +22,12 @@ function renderCart() {
   }
 
   jsCart2.innerHTML = cart2
-    .map((obj) => {
+    .map((obj, index) => {
       const title = escapeHtml(obj.title);
       const shortTitle = escapeHtml(obj.title.split(" ").slice(0, 6).join(" "));
-      const shortDescription = escapeHtml(obj.description.split(" ").slice(0, 15).join(" "));
+      const shortDescription = escapeHtml(
+        obj.description.split(" ").slice(0, 15).join(" ")
+      );
 
       return `
         <article class="prod">
@@ -36,6 +38,14 @@ function renderCart() {
             <h3>${shortTitle}</h3>
             <p>${shortDescription}</p>
             <p class="current-price">$${escapeHtml(obj.price)}</p>
+            
+            <button 
+              class="remove-btn" 
+              onclick="removeItem(${index})"
+              aria-label="Remove ${title} from cart"
+            >
+              Remove
+            </button>
           </div>
         </article>
       `;
@@ -43,4 +53,12 @@ function renderCart() {
     .join("");
 }
 
+function removeItem(index) {
+  cart2.splice(index, 1); // Remove item from array
+  
+  localStorage.setItem("cart", JSON.stringify(cart2));
+  
+  renderCart();
+}
 renderCart();
+
